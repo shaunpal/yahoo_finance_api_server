@@ -8,7 +8,7 @@ import (
 
 func main(){
 	router := mux.NewRouter()
-	router.Host("https://yahoo-finance-api-server.herokuapp.com/")
+	router.Host("https://yahoo-finance-api-server.herokuapp.com")
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
 		w.Write([]byte("Hello"))
 	})
@@ -16,6 +16,9 @@ func main(){
 	router.HandleFunc("/index/{symbol}", handlers.GetIndex).Methods("GET")
 	router.HandleFunc("/equity/{symbol}", handlers.GetEquity).Methods("GET")
 
-	
-	http.ListenAndServe(":8080", router)
+	server := &http.Server{
+		Addr: ":9001",
+		Handler: router,
+	}
+	server.ListenAndServe()
 }
