@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"github.com/gorilla/mux"
 	"server/handlers"
+	"os"
 )
 
 func main(){
@@ -16,9 +17,7 @@ func main(){
 	router.HandleFunc("/index/{symbol}", handlers.GetIndex).Methods("GET")
 	router.HandleFunc("/equity/{symbol}", handlers.GetEquity).Methods("GET")
 
-	server := &http.Server{
-		Addr: ":9001",
-		Handler: router,
-	}
-	server.ListenAndServe()
+
+	port := ":" + os.Getenv("PORT")
+	http.ListenAndServe(port, router)
 }
