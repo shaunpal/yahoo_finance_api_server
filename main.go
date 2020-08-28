@@ -9,7 +9,7 @@ import (
 
 func main(){
 	router := mux.NewRouter()
-	router.Host("https://yahoo-finance-api-server.herokuapp.com")
+
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
 		w.Write([]byte("Hello"))
 	})
