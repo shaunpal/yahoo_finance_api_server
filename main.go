@@ -17,7 +17,7 @@ func main(){
 	router.HandleFunc("/equity/{symbol}", handlers.GetEquity).Methods("GET")
 
 	server := &http.Server{
-		Addr: "https://yahoo-finance-api-server.herokuapp.com",
+		Addr: "https://yahoo-finance-api-server.herokuapp.com:8000",
 		Handler: router,
 	}
 	server.ListenAndServe()
