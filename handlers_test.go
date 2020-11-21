@@ -33,7 +33,7 @@ func TestHandlers(t *testing.T){
 	if contentType1 := rr1.Header().Get("Content-Type"); contentType1 != "application/json" {
         t.Errorf("content type header does not match %v",contentType1)
     }
-	if contentType2 := rr1.Header().Get("Content-Type"); contentType2 != "application/json" {
+	if contentType2 := rr2.Header().Get("Content-Type"); contentType2 != "application/json" {
         t.Errorf("content type header does not match %v",contentType2)
     }
 }
