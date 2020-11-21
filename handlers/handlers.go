@@ -79,12 +79,12 @@ func GetEquity(w http.ResponseWriter, r *http.Request){
 
 	// Find quote-header-info div tag
 	doc.Find("#quote-header-info").Each(func(i int, s *goquery.Selection) {
-		// For each item found, get the band and title
+		// For each item found, get the title
 		title := s.Find("h1").Text()
 		// w.Write([]byte(title))
 		data = append(data, title)
 
-		// For each item found, get the band and title
+		// For each item found, filter text
 		s.Find("span").Each(func(i int, s *goquery.Selection) {
 			if s.Text() != "Add to watchlist" {
 				data = append(data, s.Text())

@@ -1,10 +1,10 @@
-package main
+package server
 
 import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
-	"./handlers"
+	"server/handlers"
 )
 
 func TestHandlers(t *testing.T){
