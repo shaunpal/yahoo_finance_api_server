@@ -1,13 +1,14 @@
-package server
+package yahoo_finance_api_server
 
 import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
-	"server/handlers"
+
+	"./handlers"
 )
 
-func TestHandlers(t *testing.T){
+func TestHandlers(t *testing.T) {
 	testEquityEndpoint := "/equity/TSLA"
 	testIndexEndpoint := "/index/FTSE"
 	req1, err := http.NewRequest("GET", testEquityEndpoint, nil)
@@ -31,9 +32,9 @@ func TestHandlers(t *testing.T){
 	}
 
 	if contentType1 := rr1.Header().Get("Content-Type"); contentType1 != "application/json" {
-        t.Errorf("content type header does not match %v",contentType1)
-    }
+		t.Errorf("content type header does not match %v", contentType1)
+	}
 	if contentType2 := rr2.Header().Get("Content-Type"); contentType2 != "application/json" {
-        t.Errorf("content type header does not match %v",contentType2)
-    }
+		t.Errorf("content type header does not match %v", contentType2)
+	}
 }

@@ -1,4 +1,4 @@
-package main
+package yahoo_finance_api_server
 
 import (
 	"net/http"
