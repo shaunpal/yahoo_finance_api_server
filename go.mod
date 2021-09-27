@@ -1,4 +1,4 @@
-module github.com/shaunpal/yahoo_finance_api_server
+module yahoo_finance_api_server
 
 go 1.15
 
