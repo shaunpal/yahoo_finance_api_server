@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"./handlers"
+	"yahoo_finance_api_server/handlers"
 )
 
 func TestHandlers(t *testing.T) {

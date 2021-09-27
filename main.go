@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"os"
 
-	"./handlers"
+	"yahoo_finance_api_server/handlers"
 
 	"github.com/gorilla/mux"
 )
