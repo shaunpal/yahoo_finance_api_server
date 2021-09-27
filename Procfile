@@ -1,1 +1,1 @@
-web: yahoo_finance_api_server
+web: bin/yahoo_finance_api_server
