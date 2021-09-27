@@ -1,1 +1,1 @@
-web: server
+web: Yahoo-Finance-API-server
